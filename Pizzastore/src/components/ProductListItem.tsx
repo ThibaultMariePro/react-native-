@@ -1,11 +1,17 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
-import Colors from '@/src/constants/Colors';
+import Colors from '@constants/Colors';
+import { Product } from '@/types';
 
+export const notFoundImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/330px-No-Image-Placeholder.svg.png?20200912122019";
 
-const ProductListItem = ({ product }) => {
+type ProductListItemProps = {
+    product: Product;
+}
+
+const ProductListItem = ({ product }: ProductListItemProps) => {
   return (
     <View>
-      <Image source={{ uri: product.image }} style={styles.image} />
+      <Image source={{ uri: product.image || notFoundImageUrl }} style={styles.image} />
       <Text>{product.name}</Text>
       <Text style={styles.highlight}>{product.price} €</Text>
     </View>

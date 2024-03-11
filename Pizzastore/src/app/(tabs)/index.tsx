@@ -1,6 +1,6 @@
-import { View } from '@/src/components/Themed';
-import products from '@/assets/data/product';
-import ProductListItem from '@/src/components/ProductListItem';
+import { View } from '@components/Themed';
+import products from '@assets/data/product';
+import ProductListItem from '@components/ProductListItem';
 
 export default function MenuScreen() {
   return (
